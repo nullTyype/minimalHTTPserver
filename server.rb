@@ -4,9 +4,9 @@ require 'uri'
 WEB_ROOT = './public'
 
 CONTENT_TYPE_MAPPING = {
-    'html' => 'text/html'
-    'txt' => 'text/plain'
-    'png' => 'image/png'
+    'html' => 'text/html',
+    'txt' => 'text/plain',
+    'png' => 'image/png',
     'jpg' => 'image/jpeg'
 }
 
@@ -19,7 +19,7 @@ end
 
 def requested_file(request_line)
     request_uri = request_line.split(" ")[1]
-    path        = URI.unescape(URI(requested_uri).path)
+    path        = URI.unescape(URI(request_uri).path)
 
     clean = []
 
